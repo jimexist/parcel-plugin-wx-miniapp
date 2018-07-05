@@ -1,0 +1,26 @@
+{
+  "name": "parcel-plugin-wx-miniapp",
+  "version": "0.0.1",
+  "description": "Parcel Plugin for Wechat MiniApp",
+  "main": "index.js",
+  "repository": "git@github.com:Jimexist/parcel-plugin-wx-miniapp.git",
+  "author": "Jiayu Liu <etareduce@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged",
+    "test": "jest --passWithNoTests"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "jest": "^23.3.0",
+    "lint-staged": "^7.2.0",
+    "parcel-bundler": "^1.9.4",
+    "prettier": "^1.13.7"
+  }
+}
