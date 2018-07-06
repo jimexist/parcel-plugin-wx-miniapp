@@ -8,6 +8,7 @@ export default class WxssAsset extends Asset {
   constructor(name, options) {
     super(name, options);
     this.type = "wxss";
+    debug("constructor", { name, options });
     this.delegate = new CSSAsset(name, options);
   }
 
