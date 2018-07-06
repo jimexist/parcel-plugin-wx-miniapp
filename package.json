@@ -16,6 +16,7 @@
     "prepublishOnly": "npm run clean && npm run build",
     "prebuild": "npm run lint",
     "lint": "eslint src",
+    "format": "prettier --write \"./{src,test}/**/*.{js,json,md}\"",
     "build": "babel src -d lib"
   },
   "lint-staged": {
@@ -29,6 +30,7 @@
     "@babel/core": "^7.0.0-beta.52",
     "@babel/preset-env": "^7.0.0-beta.52",
     "babel-eslint": "^8.2.5",
+    "cross-env": "^5.2.0",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
