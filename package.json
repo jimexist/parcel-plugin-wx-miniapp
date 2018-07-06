@@ -26,9 +26,6 @@
     "*.{js,json,css,md}": [
       "prettier --write",
       "git add"
-    ],
-    "*.js": [
-      "yarn test -o"
     ]
   },
   "devDependencies": {

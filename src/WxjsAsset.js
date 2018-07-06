@@ -7,6 +7,7 @@ export default class WxjsAsset extends Asset {
   constructor(name, options) {
     super(name, options);
     this.type = "js";
+    debug("constructor", { name, options });
     this.delegate = new JsAsset(name, options);
   }
 
