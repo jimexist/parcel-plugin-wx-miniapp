@@ -1,8 +1,8 @@
-import { Asset } from "parcel-bundler";
-import logger from "parcel-bundler/src/Logger";
-import JsAsset from "parcel-bundler/src/assets/JSAsset";
+const { Asset } = require("parcel-bundler");
+const logger = require("parcel-bundler/src/Logger");
+const JsAsset = require("parcel-bundler/src/assets/JSAsset");
 
-export default class WxjsAsset extends Asset {
+class WxjsAsset extends Asset {
   constructor(name, options) {
     super(name, options);
     this.type = "js";
@@ -23,3 +23,5 @@ export default class WxjsAsset extends Asset {
     return result;
   }
 }
+
+module.exports = WxjsAsset;

@@ -1,8 +1,8 @@
-import { Asset } from "parcel-bundler";
-import logger from "parcel-bundler/src/Logger";
-import CSSAsset from "parcel-bundler/src/assets/CSSAsset";
+const { Asset } = require("parcel-bundler");
+const logger = require("parcel-bundler/src/Logger");
+const CSSAsset = require("parcel-bundler/src/assets/CSSAsset");
 
-export default class WxssAsset extends Asset {
+class WxssAsset extends Asset {
   constructor(name, options) {
     super(name, options);
     this.type = "wxss";
@@ -23,3 +23,5 @@ export default class WxssAsset extends Asset {
     return result;
   }
 }
+
+module.exports = WxssAsset;

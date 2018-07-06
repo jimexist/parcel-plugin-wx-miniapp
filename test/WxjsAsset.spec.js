@@ -1,4 +1,4 @@
-import WxjsAsset from "../src/WxjsAsset";
+const WxjsAsset = require("../src/WxjsAsset");
 
 describe("WxjsAsset", () => {
   it("should set the type accordingly", () => {

@@ -1,4 +1,4 @@
-import WxssAsset from "../src/WxssAsset";
+const WxssAsset = require("../src/WxssAsset");
 
 describe("WxssAsset", () => {
   it("should output type `js`", () => {
