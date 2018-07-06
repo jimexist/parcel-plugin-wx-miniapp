@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "precommit": "lint-staged",
-    "test": "jest --passWithNoTests",
+    "test": "jest",
     "clean": "rimraf lib/",
     "prepublishOnly": "npm run clean && npm run build",
     "prebuild": "npm run lint",
@@ -26,6 +26,9 @@
     "*.{js,json,css,md}": [
       "prettier --write",
       "git add"
+    ],
+    "*.js": [
+      "yarn test -o"
     ]
   },
   "devDependencies": {
