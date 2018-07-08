@@ -26,6 +26,8 @@ async function setupBundler(input, options) {
   return bundler;
 }
 
+jest.setTimeout(10 * 1000); // 10 second timeout
+
 describe("basic", () => {
   describe("wxss", () => {
     const inputPath = path.join(__dirname, "integration/basic/app.wxss");
@@ -39,6 +41,7 @@ describe("basic", () => {
       });
     });
   });
+
   describe("wxjs", () => {
     const inputPath = path.join(__dirname, "integration/basic/app.wxjs");
     it(`should create bundle for ${inputPath}`, async () => {
