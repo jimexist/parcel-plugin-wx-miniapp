@@ -1,6 +1,6 @@
 {
   "name": "parcel-plugin-wx-miniapp",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Parcel Plugin for Wechat MiniApp",
   "main": "index.js",
   "repository": "git@github.com:Jimexist/parcel-plugin-wx-miniapp.git",
