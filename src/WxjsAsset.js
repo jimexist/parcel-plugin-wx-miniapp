@@ -6,10 +6,28 @@ class WxjsAsset extends Asset {
   constructor(name, options) {
     super(name, options);
     this.type = "js";
-    logger.log(
-      `constructor, name: ${name}, options: ${JSON.stringify(options)}`
+    this.delegate = new JsAsset(
+      name,
+      Object.assign({}, options, {
+        sourceMaps: false
+      })
     );
-    this.delegate = new JsAsset(name, options);
+  }
+
+  mightHaveDependencies() {
+    return this.delegate.mightHaveDependencies();
+  }
+
+  shouldInvalidate(cacheData) {
+    return this.delegate.shouldInvalidate(cacheData);
+  }
+
+  generateErrorMessage() {
+    return this.delegate.generateErrorMessage();
+  }
+
+  collectDependencies() {
+    return this.delegate.collectDependencies();
   }
 
   async parse(code) {
@@ -20,15 +38,11 @@ class WxjsAsset extends Asset {
   }
 
   async pretransform() {
-    logger.log(`pretransform`);
     await this.delegate.pretransform();
   }
 
   async transform() {
-    logger.log(`transform`);
-    const result = await this.delegate.transform();
-    logger.log(`transform, result: ${result}`);
-    return result;
+    await this.delegate.transform();
   }
 
   async generate() {

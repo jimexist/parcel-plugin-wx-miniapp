@@ -13,7 +13,7 @@
     "precommit": "lint-staged",
     "pretest": "npm run build",
     "test": "jest",
-    "clean": "rimraf lib/",
+    "clean": "rimraf lib/ test/lib/",
     "prepublishOnly": "npm run clean && npm run build",
     "prebuild": "npm run lint",
     "lint": "eslint src",

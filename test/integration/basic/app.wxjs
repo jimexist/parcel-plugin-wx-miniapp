@@ -1,3 +1,15 @@
+// commonjs
+const moment = require("moment");
+
+// es6 module
+import _ from "lodash";
+
+import xyz from './xyz';
+
+const a = 1;
+let b = 2;
+
+// definitions
 App({
   onLaunch() {
     console.log('on launch');

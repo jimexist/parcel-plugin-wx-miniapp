@@ -50,11 +50,7 @@ describe("basic", () => {
       assertBundleTree(bundle, {
         type: "js",
         assets: ["app.wxjs"],
-        childBundles: [
-          {
-            type: "map"
-          }
-        ]
+        childBundles: []
       });
     });
   });
