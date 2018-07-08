@@ -3,7 +3,7 @@
   "version": "0.0.9",
   "description": "Parcel Plugin for Wechat MiniApp",
   "main": "index.js",
-  "repository": "git@github.com:Jimexist/parcel-plugin-wx-miniapp.git",
+  "repository": "github:Jimexist/parcel-plugin-wx-miniapp",
   "author": "Jiayu Liu <etareduce@gmail.com>",
   "license": "MIT",
   "files": [
