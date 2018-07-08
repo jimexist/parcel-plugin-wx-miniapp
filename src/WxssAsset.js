@@ -25,3 +25,5 @@ export default class WxssAsset extends Asset {
     return result;
   }
 }
+
+module.exports = WxssAsset;
