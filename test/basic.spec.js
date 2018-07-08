@@ -27,19 +27,32 @@ async function setupBundler(input, options) {
 }
 
 describe("basic", () => {
-  const inputPath = path.join(__dirname, "integration/basic/app.wxjs");
-
-  it(`should create bundle for ${inputPath}`, async () => {
-    const bundler = await setupBundler(inputPath);
-    const bundle = await bundler.bundle();
-    assertBundleTree(bundle, {
-      type: "js",
-      assets: ["app.wxjs"],
-      childBundles: [
-        {
-          type: "map"
-        }
-      ]
+  describe("wxss", () => {
+    const inputPath = path.join(__dirname, "integration/basic/app.wxss");
+    it(`should create bundle for ${inputPath}`, async () => {
+      const bundler = await setupBundler(inputPath);
+      const bundle = await bundler.bundle();
+      assertBundleTree(bundle, {
+        type: "wxss",
+        assets: ["app.wxss"],
+        childBundles: []
+      });
+    });
+  });
+  describe("wxjs", () => {
+    const inputPath = path.join(__dirname, "integration/basic/app.wxjs");
+    it(`should create bundle for ${inputPath}`, async () => {
+      const bundler = await setupBundler(inputPath);
+      const bundle = await bundler.bundle();
+      assertBundleTree(bundle, {
+        type: "js",
+        assets: ["app.wxjs"],
+        childBundles: [
+          {
+            type: "map"
+          }
+        ]
+      });
     });
   });
 });
