@@ -19,9 +19,6 @@
     "format": "prettier --write \"./{src,test}/**/*.{js,json,md}\"",
     "build": "babel src -d lib"
   },
-  "engines": {
-    "node": ">= 8.0.0"
-  },
   "lint-staged": {
     "*.{js,json,css,md}": [
       "prettier --write",
