@@ -2,7 +2,7 @@ import { Asset } from "parcel-bundler";
 import logger from "parcel-bundler/src/Logger";
 import CSSAsset from "parcel-bundler/src/assets/CSSAsset";
 
-export default class WxssAsset extends Asset {
+class WxssAsset extends Asset {
   constructor(name, options) {
     super(name, options);
     this.type = "wxss";
@@ -27,3 +27,4 @@ export default class WxssAsset extends Asset {
 }
 
 module.exports = WxssAsset;
+export default module.exports;
