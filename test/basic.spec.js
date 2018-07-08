@@ -7,7 +7,7 @@ async function setupBundler(input, options) {
   const watch = false;
   const cache = false;
   const hmr = false;
-  const logLevel = 3;
+  const logLevel = 2;
   const bundler = new Bundler(
     input,
     Object.assign(
@@ -34,15 +34,7 @@ describe("basic", () => {
     const bundle = await bundler.bundle();
     assertBundleTree(bundle, {
       type: "js",
-      assets: [
-        "index.js",
-        "Demo.svelte",
-        "Header.svelte",
-        "hot-api.js",
-        "index.js",
-        "proxy.js",
-        "registry.js"
-      ],
+      assets: ["app.wxjs"],
       childBundles: [
         {
           type: "map"
