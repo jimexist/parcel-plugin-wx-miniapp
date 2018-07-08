@@ -2,21 +2,47 @@ import { Asset } from "parcel-bundler";
 import logger from "parcel-bundler/src/Logger";
 import JsAsset from "parcel-bundler/src/assets/JSAsset";
 
-export default class WxjsAsset extends Asset {
+class WxjsAsset extends Asset {
   constructor(name, options) {
     super(name, options);
     this.type = "js";
-    logger.log(
-      `constructor, name: ${name}, options: ${JSON.stringify(options)}`
+    this.delegate = new JsAsset(
+      name,
+      Object.assign({}, options, {
+        sourceMaps: false
+      })
     );
-    this.delegate = new JsAsset(name, options);
+  }
+
+  mightHaveDependencies() {
+    return this.delegate.mightHaveDependencies();
+  }
+
+  shouldInvalidate(cacheData) {
+    return this.delegate.shouldInvalidate(cacheData);
+  }
+
+  generateErrorMessage() {
+    return this.delegate.generateErrorMessage();
+  }
+
+  collectDependencies() {
+    return this.delegate.collectDependencies();
   }
 
   async parse(code) {
     logger.log(`parse, code: ${code}`);
     const result = await this.delegate.parse(code);
-    logger.log(`parse, result: ${result}`);
+    logger.log(`parse, result: ${JSON.stringify(result)}`);
     return result;
+  }
+
+  async pretransform() {
+    await this.delegate.pretransform();
+  }
+
+  async transform() {
+    await this.delegate.transform();
   }
 
   async generate() {
@@ -25,3 +51,6 @@ export default class WxjsAsset extends Asset {
     return result;
   }
 }
+
+module.exports = WxjsAsset;
+export default module.exports;
