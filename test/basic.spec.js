@@ -12,7 +12,7 @@ async function setupBundler(input, options) {
     input,
     Object.assign(
       {
-        outDir: path.join(__dirname, "dist"),
+        outDir: path.join(__dirname, "lib"),
         watch,
         cache,
         hmr,

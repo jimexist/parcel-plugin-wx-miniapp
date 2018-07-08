@@ -15,7 +15,19 @@ class WxssAsset extends Asset {
   async parse(code) {
     logger.log(`parse, code: ${code}`);
     const result = await this.delegate.parse(code);
-    logger.log(`parse, result: ${result}`);
+    logger.log(`parse, result: ${JSON.stringify(result)}`);
+    return result;
+  }
+
+  async pretransform() {
+    logger.log(`pretransform`);
+    await this.delegate.pretransform();
+  }
+
+  async transform() {
+    logger.log(`transform`);
+    const result = await this.delegate.transform();
+    logger.log(`transform, result: ${result}`);
     return result;
   }
 
